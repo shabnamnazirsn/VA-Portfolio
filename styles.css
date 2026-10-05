@@ -1,90 +1,308 @@
-/* Universal styles start */
+/* ============================================
+   UNIVERSAL / GLOBAL
+   ============================================ */
 :root {
-    --text-color: #40342d;
-    --background-page-color: #fcf8e7;
-    --background-section-color: #c7cfb7;
-    --border-section-color: #879e82;
-    --unnamed-color: #a98467;
+    /* ---------- Base palette ---------- */
+    --cream:            #f6f2ea;
+    --dark-brown:       #3d2c1e;
+    --sage-green:       #848f87;
+    --soft-sage:        #e9e7db;
+    --light-sage:       #c7cfb7;
+    --terracotta:       #c8896f;
+    --soft-terracotta:  #d99b81;
+
+    /* ---------- Semantic roles ---------- */
+    --background-page:      var(--cream);
+    --background-form:      var(--soft-sage);
+    --background-button:    var(--terracotta);
+    --background-button-hover: #b87660;   /* slightly darker for hover */
+    
+    --text-color:           var(--dark-brown);
+    --text-on-button:       #ffffff;
+    --text-muted:           #6b5b4e;      /* for secondary text */
+
+    --border-input:         var(--light-sage);
+    --border-accent:        var(--sage-green);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    line-height: 1.6;
+    background-color: var(--background-page);
     color: var(--text-color);
-    background-color: var(--background-page-color);
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+}
+
+.script-heading {
+    font-family: 'Parisienne', cursive;
 }
 
 section {
-    background-color: var(--background-section-color);
-    border-radius: 10px;
-    border: 2px solid var(--border-section-color);
-    padding: 10px;
-    margin: 10px;
+    margin: 0;
 }
 
 h2 {
     font-size: 2rem;
 }
 
-/* Universal styles end */
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
-/*Navbar styles start */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.15rem 2rem;
+    background-color: var(--background-page);
+}
+
+#logo {
+    color: var(--sage-green);
+}
+
 nav ul {
     display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: var(--border-section-color);
+    gap: 1.5rem;
     justify-content: center;
-}
-
-nav ul li {
-    display: block;
-    padding: 10px 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--background-page-color);
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: var(--border-section-color);
-    background-color: var(--background-page-color);
-    border-radius: 5px;
-}
-
-
-/*Navbar styles end */
-
-/* Header styles start */
-#cover-banner {
-    object-fit: cover;
-    width: 98vw;
-    height: 35vh;
-    object-position: top;
-    border-radius: 20px;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-header {
+nav a {
+    border-bottom: 2px solid transparent;
+    color: var(--text-color); 
+    font-weight: bold;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    transition: border-color 0.2s ease;
+}
+
+nav a:hover {
+    border-bottom-color: var(--text-color);
+}
+
+nav a.active {
+    border-bottom-color: var(--text-color);
+}
+
+/* ============================================
+   HOME PAGE (index.html)
+   ============================================ */
+
+header h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 0.5rem 0;
+}
+
+.heading-underline {
+    background-color: var(--sage-green);
+    display: inline-block;
+    height: 2px;
+    margin: 0.5rem 0 1rem 0;
+    width: 60px;
+}
+
+.hero-tagline {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.hero-text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
     text-align: center;
 }
 
-h1 {
-    font-size: 3rem;
+#cover-banner {
+    height: 35vh;
+    margin: 0;
+    object-fit: cover;
+    object-position: top;
+    padding: 0;
+    width: 100%;
 }
 
-/* Header styles end */
+.hero-image-wrapper {
+    position: relative;
+    line-height: 0;      /* removes tiny gap below image */
+}
 
-/* What I bring styles start */
+.curve-divider {
+    position: absolute;
+    bottom: -1px;        /* tiny overlap to prevent sub-pixel gap */
+    left: 0;
+    width: 100%;
+    height: 80px;
+}
+
+#index-main {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1050px;
+    padding: 1rem 3rem 3rem 3rem;
+}
+
+#headshot-container {
+    position: relative;
+}
+
+#headshot-svg-left {
+    position: absolute;
+    max-width: 300px;
+    z-index: -1;
+    top: 120%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+#headshot-svg-right {
+    position: absolute;
+    max-width: 300px;
+    max-height: 350px;
+    z-index: -1;
+    top: 120%;
+    left: 38%;
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+
+#headshot {
+    border-radius: 40%;
+    display: block;
+    height: auto;
+    width: 100%;
+    margin: 0 auto 0.5rem auto;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.short-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.bio-text h2 {
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    z-index: 1;
+}
+
+.bio-text p {
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+.scroll-to-form {
+    display: none;
+}
+
+.cta {
+    background-color: var(--background-form);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
+.form-field {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+    color: var(--text-color); 
+    font-family: inherit;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-input);
+    border-radius: 8px;
+    background-color: var(--cream);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--sage-green);
+    box-shadow: 0 0 0 3px rgba(142, 163, 132, 0.2);
+}
+
+.honeypot {
+    display: none;
+}
+
+button {
+    background-color: var(--background-button);
+    color: var(--text-on-button);
+    border: none;
+    border-radius: 999px;
+    padding: 0.85rem 2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background-color: var(--background-button-hover);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+button:hover .arrow {
+    transform: translateX(4px);
+}
+
+#form-result {
+    color: var(--text-color);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1.5rem; /* reserves space so layout doesn't jump */
+}
+
+
+/* ============================================
+   ABOUT PAGE (about-me.html)
+   ============================================ */
 
 #what-i-bring {
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
 }
 
 #what-i-bring h2{
@@ -92,39 +310,30 @@ h1 {
     text-align: center;
 }
 
-/* Bio styles start */
-
-#bio {
-
-}
-
-/* Bio styles end */
-
-/* Timeline styles */
 #timeline-list dl {
-    --timeline-line: var(--unnamed-color);
-    position: relative;
+    --timeline-line: var(--terracotta);
     margin: 0;
     padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
     text-align: left;
 }
 
 #timeline-list dl::before {
+    background: var(--timeline-line);
+    bottom: 4rem;
     content: "";
+    left: 1rem;
     position: absolute;
     top: 0.85rem;
-    bottom: 4rem;
-    left: 1rem;
     width: 2px;
-    background: var(--timeline-line);
 }
 
 #timeline-list dl dt,
 #timeline-list dl dd {
-    position: relative;
-    z-index: 1;
     margin: 0;
     padding-bottom: 0.65rem;
+    position: relative;
+    z-index: 1;
 }
 
 #timeline-list dl dt {
@@ -132,14 +341,14 @@ h1 {
 }
 
 #timeline-list dl dt::after {
+    background: var(--timeline-line);
+    border-radius: 50%;
     content: "";
     position: absolute;
     top: 0.35rem;
     left: -1.35rem;
     width: 0.85rem;
     height: 0.85rem;
-    border-radius: 50%;
-    background: var(--timeline-line);
 }
 
 #timeline-list dl dd {
@@ -156,32 +365,72 @@ h1 {
         left: -1.67rem;
     }
 }
-/*Timeline styles end */
 
-/* What I bring styles end */
+/* ============================================
+   Mobile responsiveness
+   ============================================ */
 
-#navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+@media (max-width: 768px) {
+    #index-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem 1.25rem 3rem 1.25rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .site-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    #headshot {
+        max-width: 250px;
+    }
+
+    #headshot-svg-left, #headshot-svg-right {
+        display: none;
+    }
+
+     .scroll-to-form {
+        background-color: var(--background-button);
+        color: var(--text-on-button);
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        padding: 0.85rem 2rem;
+        border-radius: 999px;
+        font-weight: 500;
+        margin-top: 0.25rem;
+        transition: background-color 0.2s ease;
+    }
+    
+    .scroll-to-form:hover {
+        background-color: var(--background-button-hover);
+    }
+
+    .cta {
+        padding: 1.5rem;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
 }
 
-#navbar 
-a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#navbar a:hover {
-    background-color: var(--background-page-color);
-}
-
-#navbar span {
-  padding-right: 0.5rem;
-  border-right: 3px solid var(--border-section-color);
-}
