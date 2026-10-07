@@ -158,11 +158,11 @@ header h1 {
     padding: 1rem 3rem 3rem 3rem;
 }
 
-#headshot-container {
+#index-headshot-container {
     position: relative;
 }
 
-#headshot-svg-left {
+#index-headshot-svg-left {
     position: absolute;
     max-width: 300px;
     z-index: -1;
@@ -181,7 +181,7 @@ header h1 {
     transform: translate(-50%, -50%) rotate(30deg);
 }
 
-#headshot {
+#index-headshot {
     border-radius: 40%;
     display: block;
     height: auto;
@@ -295,6 +295,24 @@ button:hover .arrow {
 }
 
 
+/* ===================================================================
+   SHARED PAGES HEADERS (about-me.html, services.html, contact.html)
+   =================================================================== */
+
+.page-header {
+    text-align: center;
+    padding: 3rem, 1rem, 1rem, 1rem;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 0.5rem 0;
+}
+
+
+
 /* ============================================
    ABOUT PAGE (about-me.html)
    ============================================ */
@@ -395,11 +413,11 @@ button:hover .arrow {
         font-size: 0.9rem;
     }
 
-    #headshot {
+    #index-headshot {
         max-width: 250px;
     }
 
-    #headshot-svg-left, #headshot-svg-right {
+    #index-headshot-svg-left, #index-headshot-svg-right {
         display: none;
     }
 

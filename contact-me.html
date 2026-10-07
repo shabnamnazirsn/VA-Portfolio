@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact me</title>
+    <title>Contact Me — Shabnam | Virtual Assistant</title>
+    
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Parisienne&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-me.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact-me.html">Contact Me</a></li>
-        </ul>
-    </nav>
+    <div class="site-header">
+        <a href="index.html" id="logo" aria-label="Home">
+            <svg viewBox="0 0 60 60" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-me.html">About Me</a></li>   <!-- .active moves to the current page -->
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact-me.html" class="active" aria-current="page">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
 
+    <header class="page-header">
+        <h1 class="script-heading">Contact Me</h1>
+        <span class="heading-underline" aria-hidden="true"></span>
+    </header>
+
+    <main id="contact-me-main">
+        <!-- page-specific content goes here -->
+    </main>
+
+    <!-- page-specific scripts if needed -->
 </body>
 </html>

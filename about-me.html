@@ -3,47 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+    <title>About Me — Shabnam | Virtual Assistant</title>
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Parisienne&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-me.html">About Me</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact-me.html">Contact Me</a></li>
-        </ul>
-    </nav>
+    <div class="site-header">
+        <a href="index.html" id="logo" aria-label="Home">
+            <svg viewBox="0 0 60 60" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+            </svg>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-me.html" class="active" aria-current="page">About Me</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact-me.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <section id="what-i-bring">
-        <h2>What I bring</h2>
-        <div id="bio">
-            <p>I am a detail-oriented Virtual Assistant with experience supporting business owners with the day-to-day tasks that keep a business running smoothly. My background includes office management, executive assistance and working across a wide range of responsibilities within a small business environment. </p>
+    <header class="page-header">
+        <h1 class="script-heading">About Me</h1>
+        <span class="heading-underline" aria-hidden="true"></span>
+    </header>
 
-            <p>I am comfortable taking a busy collection of tasks, information and priorities and turning them into something organised and manageable. I enjoy research, administration, problem-solving and finding practical ways to make processes easier. </p>
+    <main id="about-main">
+        <section class="about-section">
+            <h2 class="script-heading">What I bring</h2>
 
-            <p>I am an adaptable, highly computer literate and confident learning new systems and workflows. My approach is simple: understand what needs to be done, organise it clearly, communicate reliably and follow through.</p>
-        </div>
+            <div class="about-grid">
+                <img src="images/headshot.jpeg" 
+                    alt="Shabnam Nazir, Virtual Assistant, professional headshot." 
+                    id="about-me-headshot">
 
-        <div id="timeline-list">
-            <dl>
-                <dt>Organisation</dt>
-                <dd>Keeping information, tasks and priorities clear and manageable.</dd>
-                <dt>Reliability</dt>
-                <dd>Following through on responsibilities and and keeping people informed</dd>
-                <dt>Adabtability</dt>
-                <dd>Learning new systems and adjusting to different business needs</dd>
-                <dt>Attention to Detail</dt>
-                <dd>Checking information carefully and reducing avoidable mistakes</dd>
-                <dt>Initiative</dt>
-                <dd>Looking for practical ways to solve problems rather than waiting to be told every step</dd>
-                <dt>Communication</dt>
-                <dd>Clear, professional communication skills with clients, customers and colleagues</dd>
-            </dl>
-        </div>
-    </section>
+                <div class="about-bio">
+                    <p>I am a detail-oriented Virtual Assistant with experience supporting business owners with the day-to-day tasks that keep a business running smoothly. My background includes office management, executive assistance and working across a wide range of responsibilities within a small business environment.</p>
+                    <p>I am comfortable taking a busy collection of tasks, information and priorities and turning them into something organised and manageable. I enjoy research, administration, problem-solving and finding practical ways to make processes easier. </p>
+                    <p>I am adaptable, highly computer literate and confident learning new systems and workflows. My approach is simple: understand what needs to be done, organise it clearly, communicate reliably and follow through.</p>
+                </div>
+
+
+                <div id="timeline-list">
+                    <dl>
+                        <dt>Organisation</dt>
+                        <dd>Keeping information, tasks and priorities clear and manageable.</dd>
+                        <dt>Reliability</dt>
+                        <dd>Following through on responsibilities and keeping people informed</dd>
+                        <dt>Adaptability</dt>
+                        <dd>Learning new systems and adjusting to different business needs</dd>
+                        <dt>Attention to Detail</dt>
+                        <dd>Checking information carefully and reducing avoidable mistakes</dd>
+                        <dt>Initiative</dt>
+                        <dd>Looking for practical ways to solve problems rather than waiting to be told every step</dd>
+                        <dt>Communication</dt>
+                        <dd>Clear, professional communication skills with clients, customers and colleagues</dd>
+                    </dl>
+                </div>
+            </div>
+
+        </section>
+    </main>
 
 </body>
 </html>
